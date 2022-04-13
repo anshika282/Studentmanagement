@@ -3,6 +3,23 @@
 
 <?php
         session_start();
+        
+        if($_SERVER['REQUEST_METHOD'] == 'POST')
+        {
+        $rno=$_SESSION['otp'];
+        $urno=$_POST['user_otp'];
+        if(!strcmp($rno,$urno))
+        {
+        // $name=$_SESSION['name'];
+        header("Location:homepg.php");
+        //For admin if he want to know who is register
+        }else{
+          echo '<script type ="text/JavaScript">';  
+          echo 'alert("Invalid OTP try again!")';  
+          echo '</script>';
+        
+        }
+        }
     
     ?>
  
@@ -45,7 +62,7 @@ padding: 30px;
     <section class="row justify-content-center">
       <section class="col-12 col-sm-6 col-md-4">
     
-        <form class="form-container" method="post" action="otp_check.php">  
+        <form class="form-container" method="post" action="verify_otp.php">  
             <div class="text-center">
                             <h3 class="text-primary">OTP Login</h3>
                         </div>

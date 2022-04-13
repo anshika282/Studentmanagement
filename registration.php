@@ -64,6 +64,7 @@ $con->close();
 <!DOCTYPE html>
 <html lang="en" >
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="regstyle.css">
 	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -140,6 +141,24 @@ if($exists) {
 			<input type="number" placeholder="UID" name="uid" required/>
 			<input type="number"  placeholder="Class" name= "sclass" required />
             <input type="email"  placeholder="Email" name= "email" required/>
+			<div class="row"> 
+			<select  name="sclass">
+                      <option value="1">Standard</option>
+                      <option value="10">10</option>
+                      <option value="12">12</option>
+                  
+                    </select>
+					<select  name="gender">
+                      <option value="1">Gender</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+					  <option value="Others">Others</option>
+                  
+                    </select>
+</div >
+
+
+
 			<!-- <input type="checkbox" onclick="myFunction()"><h6> show password</h6><br><br> -->
             <input id="pass"   placeholder="Password" type="password" class="input" name= "spwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
   title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required />

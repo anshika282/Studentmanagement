@@ -32,13 +32,13 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
       height:100px;
   }
  
-  .card{
+  /* .card{
           margin: auto;
           width: 70%;
           border: 1px ;
           padding: 5px;
         }
-       
+        */
 
 .nav-item::after {
      content: '';
@@ -76,37 +76,37 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
   </li>       
   <li class="nav-item  ">
     <a href="student_profile.php" class="nav-link text-light bg-dark fs-4" >  
-        <i class="fas fa-th-large mr-3 text-primary" style="padding-right: 5px;" ></i>
+        <i class="fas fa-th-large mr-3 text-secondary" style="padding-right: 5px;" ></i>
         Profile
     </a>
   </li>  
   <li class="nav-item">
-    <a   href="#" class="nav-link text-light bg-dark  fs-4" >  
-        <i class="fas fa-th-large mr-3 text-primary " style="padding-right: 5px;"  ></i>
+    <a   href="find_result.php" target="_blank" class="nav-link text-light bg-dark  fs-4" >  
+        <i class="fas fa-th-large mr-3 text-secondary " style="padding-right: 5px;"  ></i>
         Result
     </a>
   </li>  
   <li class="nav-item  ">
     <a href="student_attendance.php" class="nav-link text-light bg-dark  fs-4" >  
-        <i class="fas fa-calendar-alt mr-3 text-primary "  style="padding-right: 5px;" ></i>
+        <i class="fas fa-calendar-alt mr-3 text-secondary "  style="padding-right: 5px;" ></i>
         Attendance
     </a>
   </li> 
   <li class="nav-item  ">
     <a href="timetable.php" class="nav-link text-light bg-dark  fs-4" >  
-        <i class="fas fa-th-large mr-3 text-primary " style="padding-right: 5px;" ></i>
+        <i class="fas fa-th-large mr-3 text-secondary " style="padding-right: 5px;" ></i>
         Timetable
     </a>
   </li> 
   <li class="nav-item  ">
     <a href="ebookshow.php" class="nav-link text-light bg-dark  fs-4 " >  
-        <i class="fas fa-book-open mr-3 text-primary" style="padding-right: 5px;" ></i>
+        <i class="fas fa-book-open mr-3 text-secondary" style="padding-right: 5px;" ></i>
         E-book
     </a>
   </li> 
   <li class="nav-item  ">
     <a href="logout.php" class="nav-link text-light bg-dark  fs-4" >  
-        <i class="fas fa-sign-out-alt mr-3 text-primary" style="padding-right: 5px;" ></i>
+        <i class="fas fa-sign-out-alt mr-3 text-secondary" style="padding-right: 5px;" ></i>
         Logout
     </a>
   </li> 
@@ -127,36 +127,36 @@ echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
   <div class="container py-3">
  
      <div class="row">
-     <div class="row row-cols-1 row-cols-md-3 g-4">
+     <div class="row row-cols-1 row-cols-md-4 g-4">
   <div class="col">
-    <div class="card border border-primary h-100">
-     <a href="hm.html" target="_blank"><img src="images/attendence.jpg" class="card-img-top" alt="..."></a> 
+    <div class="card bg-transparent border border-dark h-100">
+     <a href="student_attendance.php"><img src="images/att.png" class="card-img-top" alt="..."></a> 
       <div class="card-body">
-      <p style=" color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px green;font-size:medium" class="card-tittle"><b>Attendance</b></p>  
+      <p style=" color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px green;font-size:25px;text-align:center;" class="card-tittle"><b>Attendance</b></p>  
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card border border-primary h-100">
-      <img src="images/result.jpg" class="card-img-top" alt="...">
+    <div class="card bg-transparent border border-dark h-100">
+    <a href="find_result.php" target="_blank"><img src="images/res.png" class="card-img-top" alt="..."></a>
       <div class="card-body">
-      <p style=" color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px green;font-size:medium" class="card-tittle"><b>Result</b></p>
+      <p style=" color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px green;font-size:25px;text-align:center;" class="card-tittle"><b>Result</b></p>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card border-dark border h-100">
-    <a href="timetable.php" target="_blank"> <img src="images/tt.jpg" class="card-img-top" alt="..."></a>
+    <div class="card bg-transparent border border-dark h-100">
+    <a href="timetable.php"> <img src="images/timet.png" class="card-img-top" alt="..."></a>
       <div class="card-body">
-      <p style=" color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px green;font-size:medium" class="card-tittle"><b>Timetable</b></p>
+      <p style=" color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px green;font-size:25px;text-align:center;" class="card-tittle"><b>Timetable</b></p>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card border-primary border h-100" style="max-width: 18rem;">
-      <img src="images/ebook.jpg" class="card-img-top" alt="...">
+    <div class="card bg-transparent border border-dark h-100" style="max-width: 18rem;">
+    <a href="ebookshow.php"><img src="images/ebk.png" class="card-img-top" alt="..."></a>
       <div class="card-body">
-      <p style=" color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px green;font-size:medium" class="card-tittle"><b>E-book</b></p>
+      <p style=" color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px green;font-size:25px;text-align:center;" class="card-tittle"><b>E-book</b></p>
       </div>
     </div>
   </div>

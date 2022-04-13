@@ -71,44 +71,44 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
           <div class="collapse navbar-collapse order-last align-self-start" id="nav">
           <ul class="nav flex-column mb-0">
   <li class="nav-item  ">
-    <a href="homepg.php" class="nav-link text-light bg-dark fw-bold fs-4" >  
-        <i class="fas fa-school mr-3 text-primary" style="margin:20px;"></i>
+    <a href="homepg.php" class="nav-link text-light bg-dark  fs-4" >  
+        <i class="fas fa-school mr-3 text-secondary" ></i>
         Dashboard
     </a>
   </li>       
   <li class="nav-item  ">
     <a href="student_profile.php" class="nav-link text-light bg-dark fs-4" >  
-        <i class="fas fa-th-large mr-3 text-primary"></i>
+        <i class="fas fa-th-large mr-3 text-secondary"></i>
         Profile
     </a>
   </li>  
   <li class="nav-item  ">
-    <a   href="#" class="nav-link text-light bg-dark  fs-4" >  
-        <i class="fas fa-th-large mr-3 text-primary "></i>
+    <a   href="find_result.php" target="_blank"  class="nav-link text-light bg-dark  fs-4" >  
+        <i class="fas fa-th-large mr-3 text-secondary "></i>
         Result
     </a>
   </li>  
   <li class="nav-item  ">
-    <a href="#" class="nav-link text-light bg-dark  fs-4" >  
+    <a href="student_attendance.php" class="nav-link text-light bg-dark fw-bold fs-4" >  
         <i class="fas fa-calendar-alt mr-3 text-primary "></i>
         Attendance
     </a>
   </li> 
   <li class="nav-item  ">
-    <a href="#" class="nav-link text-light bg-dark  fs-4" >  
-        <i class="fas fa-th-large mr-3 text-primary "></i>
+    <a href="timetable.php" class="nav-link text-light bg-dark  fs-4" >  
+        <i class="fas fa-th-large mr-3 text-secondary "></i>
         Timetable
     </a>
   </li> 
   <li class="nav-item  ">
-    <a href="#" class="nav-link text-light bg-dark  fs-4 " >  
-        <i class="fas fa-book-open mr-3 text-primary"></i>
+    <a href="ebookshow.php" class="nav-link text-light bg-dark  fs-4 " >  
+        <i class="fas fa-book-open mr-3 text-secondary"></i>
         E-book
     </a>
   </li> 
   <li class="nav-item  ">
     <a href="logout.php" class="nav-link text-light bg-dark  fs-4" >  
-        <i class="fab fa-th-large mr-3 text-primary"></i>
+        <i class="fab fa-th-large mr-3 text-secondary"></i>
         Logout
     </a>
   </li> 

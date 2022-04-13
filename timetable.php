@@ -43,6 +43,14 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
      width: 100%;
  }
 
+.card{
+          margin: auto;
+          background: none;
+          width: 70%;
+          border: 1px ;
+          padding: 5px;
+        }
+       
 </style>
 <body>
 <div class="container-fluid">
@@ -61,7 +69,7 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
           <ul class="nav flex-column mb-0">
   <li class="nav-item  ">
     <a href="homepg.php" class="nav-link text-light bg-dark fw-bold fs-4" style="margin-left:2px">  
-        <i class="fas fa-school mr-3 text-primary" style="margin:3px 4px 3px 4px;"></i>
+        <i class="fas fa-school mr-3 text-secondary" style="margin:3px 4px 3px 4px;"></i>
         Dashboard
     </a>
   </li>       
@@ -72,25 +80,25 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
     </a>
   </li>  
   <li class="nav-item  ">
-    <a   href="#" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+    <a   href="find_result.php" target="_blank" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
         <i class="fas fa-th-large mr-3 text-secondary "  style="margin:3px 4px 3px 4px;" ></i>
         Result
     </a>
   </li>  
   <li class="nav-item  ">
-    <a href="attendance.php" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+    <a href="student_attendance.php" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
         <i class="fas fa-calendar-alt mr-3 text-secondary "  style="margin:3px 4px 3px 4px;"></i>
         Attendance
     </a>
   </li> 
   <li class="nav-item  ">
-    <a href="timetable.php" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
-        <i class="fas fa-th-large mr-3 text-secondary "  style="margin:3px 4px 3px 4px;"></i>
+    <a href="timetable.php" class="nav-link text-light bg-dark fw-bold fs-4" style="margin-left:2px">  
+        <i class="fas fa-th-large mr-3 text-primary "  style="margin:3px 4px 3px 4px;"></i>
        Timetable
     </a>
   </li> 
   <li class="nav-item  ">
-    <a href="#" class="nav-link text-light bg-dark  fs-4 " style="margin-left:2px">  
+    <a href="ebookshow.php" class="nav-link text-light bg-dark  fs-4 " style="margin-left:2px">  
         <i class="fas fa-book-open mr-3 text-secondary"  style="margin:3px 4px 3px 4px;" ></i>
         E-book
     </a>
@@ -106,32 +114,29 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
         </nav>   
 </div>   
   <main class="col px-0 flex-grow-1">
-    <div class="px-2" > 
-  
-                <form class="" action="tt_check.php" method="post">
-                    <!-- Email input -->
-  <div class="form-outline mb-4">
-  <select class="select" name="std">
-                      <option value="1" >Standard</option>
-                      <option value="2" >10</option>
-                      <option value="3" >12</option>
+  <section class="h-100 ">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center border border-3 border-dark">
+      <div class="col">
+        <div class="card card-registration my-4">
+            <div class="col-xl-12">
+              <div class="card-body p-md-5 text-black">
+                <h3 class="mb-5 text-uppercase">View Timetable</h3>
+                <form class="" action="tt_check.php" method="post">                
+                <div class="row">
+                 <div class="col-md-6 mb-4">
+
+                    <select class="select" name="std">
+                      <option value="1">Standard</option>
+                      <option value="2">10</option>
+                      <option value="3">11</option>
                       <!-- <option value="4">Option 3</option> -->
                     </select>
-  </div>
 
-  <!-- Password input -->
-  
-
-  <!-- 2 column grid layout for inline styling -->
-  <div class="row mb-4">
-    <div class="col d-flex justify-content-center">
-      <!-- Checkbox -->
-      <div class="form-check">
-      </div>
-    </div>
-
-    <div class="col">
-    <h6 class="mb-0 me-4"> Section: </h6>
+                  </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+<h6 class="mb-0 me-4"> Section: </h6>
 
 <div class="form-check form-check-inline mb-0 me-4">
   <input
@@ -153,14 +158,24 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
     value="b"
   />
   <label class="form-check-label" for="secb">B</label>
+</div>
+</div>
+</div>
+               
+
+                <div class=" row d-flex  pt-3">
+                  <button type="button" class="btn btn-primary btn-lg ">Reset all</button>
+                  <button type="submit" class="btn btn-warning btn-lg ">Submit form</button>
+                </div>
+
+              </div>
+            </div>
+         </form>
+        </div>
+      </div>
     </div>
   </div>
-
-  <!-- Submit button -->
-  <button type="reset" class="btn btn-primary btn-lg ">Reset all</button>
-                  <button type="submit" class="btn btn-warning btn-lg ms-2">Submit</button>
-</form>
-</div>             
+</section>            
 </main>
     </div>
 </div>
@@ -176,7 +191,4 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
 </body>
 
 </html>
-
-
-
 

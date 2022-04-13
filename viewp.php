@@ -72,26 +72,26 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
           <div class="collapse navbar-collapse order-last align-self-start" id="nav">
           <ul class="nav flex-column mb-0">
   <li class="nav-item  ">
-    <a href="homepg.php" class="nav-link text-light bg-dark fs-4" style="margin-left:2px">  
-        <i class="fas fa-school mr-3 text-primary" style="margin:3px 4px 3px 4px;"></i>
+    <a href="teacherdash.php" class="nav-link text-light bg-dark fs-4" style="margin-left:2px">  
+        <i class="fas fa-school mr-3 text-secondary" style="margin:3px 4px 3px 4px;"></i>
         Dashboard
     </a>
   </li>       
   <li class="nav-item  ">
-    <a href="#" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+    <a href="details_student.php" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
         <i class="fas fa-user-circle mr-3 text-secondary" style="margin:3px 4px 3px 4px;"></i>
         Student Details
     </a>
   </li>  
   <li class="nav-item  ">
-    <a   href="#" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+    <a   href="result_index.php" target="_blank"  class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
         <i class="fas fa-th-large mr-3 text-secondary "  style="margin:3px 4px 3px 4px;" ></i>
         Result
     </a>
   </li>  
   <li class="nav-item  ">
-    <a href="#" class="nav-link text-light bg-dark fw-bold fs-4" style="margin-left:2px">  
-        <i class="fas fa-calendar-alt mr-3 text-secondary "  style="margin:3px 4px 3px 4px;"></i>
+    <a href="attendance.php" class="nav-link text-light bg-dark fw-bold fs-4" style="margin-left:2px">  
+        <i class="fas fa-calendar-alt mr-3 text-primary "  style="margin:3px 4px 3px 4px;"></i>
         Attendance
     </a>
   </li> 
@@ -102,7 +102,25 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
     </a>
   </li> 
   <li class="nav-item  ">
-    <a href="#" class="nav-link text-light bg-dark  fs-4 " style="margin-left:2px">  
+    <a href="add_subject.php" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+        <i class="fas fa-th-large mr-3 text-secondary "  style="margin:3px 4px 3px 4px;"></i>
+        Add Subject
+    </a>
+  </li> 
+  <li class="nav-item  ">
+    <a href="add_teacher.php" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+        <i class="fas fa-th-large mr-3 text-secondary "  style="margin:3px 4px 3px 4px;"></i>
+        Add Teacher
+    </a>
+  </li>
+  <li class="nav-item  ">
+    <a href="add_class.php" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+        <i class="fas fa-th-large mr-3 text-secondary "  style="margin:3px 4px 3px 4px;"></i>
+        Add Class
+    </a>
+  </li>
+  <li class="nav-item  ">
+    <a href="ebook.php" target="_blank" class="nav-link text-light bg-dark  fs-4 " style="margin-left:2px">  
         <i class="fas fa-book-open mr-3 text-secondary"  style="margin:3px 4px 3px 4px;" ></i>
         E-book
     </a>
@@ -130,7 +148,7 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
               <thead>
                   <tr>
                       <th>Srno.</th>
-                      <th>Nmae</th>
+                      <th>Name</th>
                       <th>Class</th> 
                       <th>Attendance</th> 
                   </tr>
@@ -141,7 +159,7 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
                        $name=$_SESSION['name'];
                        $query="Select student.*,attendance.* 
                          from attendance
-                        INNER JOIN  student on attendance.st_id=student.uid and attendance.date='$date' and sclass in (select cstd from class where cteacher='$name')";
+                        INNER JOIN  student on attendance.st_id=student.uid and attendance.date='$date' and sclass in (select cstd from class where cteacher='$name') and section in (select section from class where cteacher='$name')";
                        $result=mysqli_query($con ,$query);
 
                        if(mysqli_num_rows($result)>0){

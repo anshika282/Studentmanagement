@@ -35,7 +35,7 @@ if (!$id) {
               <thead> 
                   <?php 
                     
-                $sql = "SELECT * FROM ebook where id='$id' ";
+                $sql = "SELECT * FROM ebook1 where id='$id' ";
                 $result = mysqli_query($con, $sql);
                 if (mysqli_num_rows($result) > 0) {
                     if ($row = mysqli_fetch_assoc($result)) {

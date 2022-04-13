@@ -62,7 +62,7 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
       <div class="col-12 col-md-3 col-xl-2 p-0 bg-dark ">
         <nav class="navbar navbar-expand-md navbar-dark bd-dark flex-md-column flex-row  py-2  sticky-top " id="sidebar">
           <div class="text-center p-3">
-            <img src="images/attendence.jpg" alt="profile picture" class="img-fluid rounded-circle my-4 p-1 d-none d-md-block shadow sizeimg"  />
+            <img src="images/s1logo.png" alt="profile picture" class="img-fluid rounded-circle my-4 p-1 d-none d-md-block shadow"  />
            <a href="#" class="navbar-brand mx-0 fw-bolder fs-3 text-nowrap"  style="color:coral" ><?php echo $_SESSION['name'];?></a>
           </div>
               <button type="button" class="navbar-toggler border-0 order-1" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,19 +72,19 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
           <div class="collapse navbar-collapse order-last align-self-start" id="nav">
           <ul class="nav flex-column mb-0">
   <li class="nav-item  ">
-    <a href="homepg.php" class="nav-link text-light bg-dark fw-bold fs-4" style="margin-left:2px">  
+    <a href="teacherdash.php" class="nav-link text-light bg-dark fw-bold fs-5" style="margin-left:2px">  
         <i class="fas fa-school mr-3 text-primary" style="margin:3px 4px 3px 4px;"></i>
         Dashboard
     </a>
   </li>       
   <li class="nav-item  ">
-    <a href="#" class="nav-link text-light bg-dark fs-4" style="margin-left:2px">  
+    <a href="details_student.php" class="nav-link text-light bg-dark fs-4" style="margin-left:2px">  
         <i class="fas fa-user-circle mr-3 text-secondary" style="margin:3px 4px 3px 4px;"></i>
         Student Details
     </a>
   </li>  
   <li class="nav-item  ">
-    <a   href="#" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+    <a   href="result_index.php" target="_blank" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
         <i class="fas fa-th-large mr-3 text-secondary "  style="margin:3px 4px 3px 4px;" ></i>
         Result
     </a>
@@ -102,7 +102,25 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
     </a>
   </li> 
   <li class="nav-item  ">
-    <a href="#" class="nav-link text-light bg-dark  fs-4 " style="margin-left:2px">  
+    <a href="add_subject.php" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+        <i class="fas fa-th-large mr-3 text-secondary "  style="margin:3px 4px 3px 4px;"></i>
+        Add Subject
+    </a>
+  </li> 
+  <li class="nav-item  ">
+    <a href="add_teacher.php" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+        <i class="fas fa-th-large mr-3 text-secondary "  style="margin:3px 4px 3px 4px;"></i>
+        Add Teacher
+    </a>
+  </li>
+  <li class="nav-item  ">
+    <a href="add_class.php" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+        <i class="fas fa-th-large mr-3 text-secondary "  style="margin:3px 4px 3px 4px;"></i>
+        Add Class
+    </a>
+  </li>
+  <li class="nav-item  ">
+    <a href="ebook.php" target="_blank" class="nav-link text-light bg-dark  fs-4 " style="margin-left:2px">  
         <i class="fas fa-book-open mr-3 text-secondary"  style="margin:3px 4px 3px 4px;" ></i>
         E-book
     </a>
@@ -127,45 +145,46 @@ echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
 </button>
 </div>';
 ?>
-  <div class="container py-3">
+   <div class="container py-3"> 
  
      <div class="row">
-     <div class="row row-cols-1 row-cols-md-3 g-4">
+     <div class="row row-cols-1 row-cols-md-4 g-1">
   <div class="col">
-    <div class="card border border-primary h-100">
-     <a href="hm.html" target="_blank"><img src="images/attendence.jpg" class="card-img-top" alt="..."></a> 
-      <div class="card-body">
-      <p style=" color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px green;font-size:medium" class="card-tittle"><b>Attendance</b></p>  
+    <div class="card bg-transparent border border-dark h-100">
+     <a href="attendance.php"><img src="images/att.png" class="center card-img-top" alt="..."></a> 
+      <div class="card-body ">
+      <p style=" color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px green;font-size:medium;font-size:25px;text-align:center;" class="card-tittle"><b>Attendance</b></p>  
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card border border-primary h-100">
-      <img src="images/result.jpg" class="card-img-top" alt="...">
+    <div class="card bg-transparent border border-dark h-100">
+    <a href="result_index.php" target="_blank"><img src="images/res.png" class="card-img-top" alt="..."></a>
       <div class="card-body">
-      <p style=" color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px green;font-size:medium" class="card-tittle"><b>Result</b></p>
+      <p style=" color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px green;font-size:medium;font-size:25px;text-align:center;" class="card-tittle"><b>Result</b></p>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card border-dark border h-100">
-      <img src="images/teacher.jpg" class="card-img-top" alt="...">
+    <div class="card bg-transparent border border-dark h-100">
+    <a href="add_student.php"><img src="images/addst.png" class="card-img-top" alt="..."></a>
       <div class="card-body">
-      <p style=" color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px green;font-size:medium" class="card-tittle"><b>Add Student</b></p>
+      <p style=" color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px green;font-size:medium;font-size:25px;text-align:center;" class="card-tittle"><b>Add Student</b></p>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card border-primary border h-100" style="max-width: 18rem;">
-      <img src="images/ebook.jpg" class="card-img-top" alt="...">
+    <div class="card bg-transparent border border-dark h-100" style="max-width: 18rem;">
+    <a href="ebook.php" target="_blank"><img src="images/ebk.png" class="card-img-top" alt="..."></a>
       <div class="card-body">
-      <p style=" color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px green;font-size:medium" class="card-tittle"><b>E-book</b></p>
+      <p style=" color: white; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px green;font-size:medium;font-size:25px;text-align:center;" class="card-tittle"><b>E-book</b></p>
       </div>
     </div>
   </div>
 </div>
 </div>
 </div>
+
 </main>
     </div>
 </div>

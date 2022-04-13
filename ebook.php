@@ -1,7 +1,7 @@
 
 
 <?php 
-
+session_start();
 include 'dbcon.php';
 $base_url = "http://localhost/project/"; // Website url
 
@@ -15,6 +15,7 @@ if (isset($_POST['upload'])) { // If isset upload button or not
 	$file_name = $_FILES["file"]["name"]; // Get uploaded file name
 	$file_temp = $_FILES["file"]["tmp_name"]; // Get uploaded file temp
 	$file_size = $_FILES["file"]["size"]; // Get uploaded file size
+	$_SESSION['filen']=$file_name;
 
 
 	/*
@@ -28,20 +29,19 @@ if (isset($_POST['upload'])) { // If isset upload button or not
 	if ($file_size > 10485760) { // Check file size 10mb or not
 		echo "<script>alert('Woops! File is too big. Maximum file size allowed for upload 10 MB.')</script>";
 	} else {
-		$sql = "INSERT INTO ebook (name, new_name)
+		$sql = "INSERT INTO ebook1 (name, new_name)
 				VALUES ('$file_name', '$file_new_name')";
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			move_uploaded_file($file_temp, $location . $file_new_name);
 			echo "<script>alert('Wow! File uploaded successfully.')</script>";
 			// Select id from database
-			$sql = "SELECT id FROM ebook ORDER BY id DESC";
+			$sql = "SELECT id FROM ebook1 ORDER BY id DESC";
 			$result = mysqli_query($con, $sql);
 			if ($row = mysqli_fetch_assoc($result)) {
 				$link = $base_url . "download.php?id=" . $row['id'];
-                $sql = "INSERT INTO ebook (share)
-				VALUES ('$link') where name='$file_name'";
-				$result2 = mysqli_query($con, $sql);
+				$sql1= "UPDATE `ebook` SET `share` = '$link' WHERE `name`='$file_new_name'" ;
+				$result2=mysqli_query($con,$sql1);
 				$link_status = "display: block;";
 			}
 		} else {
@@ -49,6 +49,8 @@ if (isset($_POST['upload'])) { // If isset upload button or not
 		}
 	}
 }
+
+
 
 ?>
 
@@ -62,9 +64,12 @@ if (isset($_POST['upload'])) { // If isset upload button or not
 
 	<link rel="stylesheet" type="text/css" href="ebook.css">
 
-	<title>File Upload PHP Script - Pure Coding</title>
+	<title>Teacher|Upload</title>
 </head>
-<body>
+<style>
+
+	</style>
+<body style=" background-color: rgb(223,118,138);  background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.7063200280112045) 43%, rgba(190,209,163,1) 100%);" >
 	<div class="file__upload">
 		<div class="header">
 			<p><i class="fa fa-cloud-upload fa-2x"></i><span><span>up</span>load</span></p>			
@@ -83,7 +88,14 @@ if (isset($_POST['upload'])) { // If isset upload button or not
 				</p>
 			</label>
 			<button name="upload" class="btn">Upload</button>
+			<a href="upload.php" target="_blank">submit</a>
 		</form>
 	</div>
+	<script>
+		function myfuction(){
+			window.location.href = "upload.php";
+		}
+		</script>
 </body>
+
 </html>

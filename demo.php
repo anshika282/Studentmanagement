@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+include('dbcon.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,44 +77,128 @@
             </nav>   
     </div>   
     <main class="col px-0 flex-grow-1">
-         <div class="container mt-5">
-              <div class="row">
+    <div class="container mt-5">
+              <div class="row ">
+                  
                   <div class="col-md-3">
                       <div class="card text-center">
                           <div class="card-header bg-primary text-white">
                               <div class="row align-items-center">
                                   <div class="col">
-                                      <i class="fas fa-list fa-4x"></i>
+                                      <i class="fas fa-calendar-alt fa-4x"></i>
                                   </div>
                                   <div class="col">
-                                      <h3 class="display-3">08</h3>
+                                      <h3 class="display-3">
+                                      <?php
+                                      $date=date('d-m-y');
+                                            $stsql="Select count(DISTINCT date) as scount from attendence where date='$date' ";
+                                            $rstsql=mysqli_query($con,$stsql);
+                                            if($rstsql > 0){
+                                                
+                                                    echo '1'; 
+                                                
+                                            }else{
+                                                echo '0';
+                                            }
+                                          ?>
+                                      </h3>
                                       <h6>Tasks</h6>
                                   </div>
                               </div>
                           </div>
                           <div class="card-footer">
                               <h5>
-                                  <a href="#" class="text-primary">View Details <i class="fas fa-arrow-alt-circle-right"></i></a>
+                                  <a href="attendance.php" class="text-primary">Attendance <i class="fas fa-arrow-alt-circle-right"></i></a>
                               </h5>
                           </div>
                       </div>
                   </div>
                   <div class="col-md-3">
                       <div class="card text-center">
-                          <div class="card-header bg-primary text-white">
+                          <div class="card-header bg-success text-white">
                               <div class="row align-items-center">
                                   <div class="col">
-                                      <i class="fas fa-list fa-4x"></i>
+                                      <i class="fas fa-users fa-4x"></i>
                                   </div>
                                   <div class="col">
-                                      <h3 class="display-3">08</h3>
+                                      <h3 class="display-3">
+                                      <?php
+                                            $stsql="Select count(*) as scount from student where clid in (select cid from class where cteacher ='ramesh kumar') ";
+                                            $rstsql=mysqli_query($con,$stsql);
+                                            if(mysqli_num_rows($rstsql) > 0){
+                                                while($row=mysqli_fetch_array($rstsql)){
+                                                    echo $row['scount']; 
+                                                }
+                                            }
+                                          ?>
+                                      </h3>
                                       <h6>Tasks</h6>
                                   </div>
                               </div>
                           </div>
                           <div class="card-footer">
                               <h5>
-                                  <a href="#" class="text-primary">View Details <i class="fas fa-arrow-alt-circle-right"></i></a>
+                                  <a href="details_student.php" class="text-primary">Students Total<i class="fas fa-arrow-alt-circle-right"></i></a>
+                              </h5>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="card text-center">
+                          <div class="card-header bg-warning text-white">
+                              <div class="row align-items-center">
+                                  <div class="col">
+                                      <i class="far fa-file-alt fa-4x"></i>
+                                  </div>
+                                  <div class="col">
+                                      <h3 class="display-3">
+                                      <?php
+                                            $stsql="Select count(DISTINCT stuid) as scount from result where stuid in (select uid from  student where clid in (select cid from class where cteacher ='ramesh kumar') )  ";
+                                            $rstsql=mysqli_query($con,$stsql);
+                                            if(mysqli_num_rows($rstsql) > 0){
+                                                while($row=mysqli_fetch_array($rstsql)){
+                                                    echo $row['scount']; 
+                                                }
+                                            }
+                                          ?>
+                                      </h3>
+                                      <h6>Tasks</h6>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="card-footer">
+                              <h5>
+                                  <a href="result_index.php" target="_blank"class="text-primary">Results<i class="fas fa-arrow-alt-circle-right"></i></a>
+                              </h5>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="card text-center">
+                          <div class="card-header bg-info text-white">
+                              <div class="row align-items-center">
+                                  <div class="col">
+                                      <i class="fas fa-book-open fa-4x"></i>
+                                  </div>
+                                  <div class="col">
+                                      <h3 class="display-3">
+                                      <?php
+                                            $stsql="Select count(id) as scount from ebook1  ";
+                                            $rstsql=mysqli_query($con,$stsql);
+                                            if(mysqli_num_rows($rstsql) > 0){
+                                                while($row=mysqli_fetch_array($rstsql)){
+                                                    echo $row['scount']; 
+                                                }
+                                            }
+                                          ?>
+                                      </h3>
+                                      <h6>Tasks</h6>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="card-footer">
+                              <h5>
+                                  <a href="ebook.php" target="_blank" class="text-primary">Ebook<i class="fas fa-arrow-alt-circle-right"></i></a>
                               </h5>
                           </div>
                       </div>

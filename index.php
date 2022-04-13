@@ -87,15 +87,15 @@ a{
 			</div>	
 			<span class="center">or</span>
 			
-			<input type="text" class="input-field" placeholder="Name" name="sname" />
-			<input type="email" class="input-field" placeholder="Email" name="email" />
+			<input type="text" class="input-field" placeholder="Name" name="sname" required/>
+			<input type="email" class="input-field" placeholder="Email" name="email" required/>
 			<!-- <input type="password"  placeholder="Password" name= "spwd" /> -->
 			<!-- <input type="checkbox" onclick="myFunction()"><h6> show password</h6><br><br> -->	
             <input id="pass" class="input-field"  placeholder="Password" type="password" class="input" name= "spwd"  required>
 	
 	        
 		  	   <button type ="submit">Sign In</button> 
-		  <a href="registration.php"><p>Not Registered?Create Account</p></a>            
+		  <a href="register.php"><p>Not Registered?Create Account</p></a>            
 		</form>
 	</div>
 	<div class="form-container sign-in-container ">
@@ -107,8 +107,8 @@ a{
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
 			<span  class="center">or</span>
-			<input type="text" placeholder="Name" name="tname" id="tname" />
-            <input type="number" placeholder="TID" name="tid" id="tid"/>
+			<input type="text" placeholder="Name" name="tname" id="tname" required/>
+            <input type="number" placeholder="TID" name="tid" id="tid" required/>
           <input   placeholder="password" type="Password" class="input" name= "tpwd" id= "tpwd"  required>
 			<button type="submit">Sign In</button> 
 		</form>

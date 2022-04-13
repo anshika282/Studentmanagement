@@ -86,13 +86,51 @@ form {
 	height: 100%;
 	transition: all 0.6s ease-in-out;
 }
-input {
+input[type="text"]{
 	background-color: #eee;
 	border: none;
 	padding: 12px 15px;
 	margin: 8px 0;
 	width: 100%;
 }
+input[type="password"]{
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+}
+input[type="number"]{
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+}
+input[type="email"]{
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+}
+input[type="telephone"]{
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+}
+/* input[type=radio]{
+
+} */
+ select{
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+ }
 
 .container {
 	background-color: #fff;
@@ -113,9 +151,9 @@ input {
 	z-index: 2;
 }
 
-.styled{
+/* .styled{
 	margin-top: 40px;
-}
+} */
 
 
 .social-container {

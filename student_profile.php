@@ -1,7 +1,10 @@
 <?php
 include 'dbcon.php';
  session_start();
- 
+ if(!isset($_SESSION['username']))
+  {
+   echo "logged out";  
+ header('location:index.php'); }
 ?>
 
 
@@ -11,7 +14,7 @@ include 'dbcon.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student home</title>
+    <title>Student | Profile</title>
     <!-- bootstrap 5 css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
@@ -75,31 +78,31 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
     </a>
   </li>       
   <li class="nav-item  ">
-    <a href="#" class="nav-link text-light bg-dark fw-bold fs-4" >  
+    <a href="student_profile.php" class="nav-link text-light bg-dark fw-bold fs-4" >  
         <i class="fas fa-th-large mr-3 text-primary"></i>
         Profile
     </a>
   </li>  
   <li class="nav-item  ">
-    <a   href="#" class="nav-link text-light bg-dark  fs-4" >  
+    <a   href="find_result.php" target="_blank"  class="nav-link text-light bg-dark  fs-4" >  
         <i class="fas fa-th-large mr-3 text-secondary "></i>
         Result
     </a>
   </li>  
-  <li class="nav-item  ">
-    <a href="#" class="nav-link text-light bg-dark  fs-4" >  
+  <li class="nav-item">
+    <a href="student_attendance.php" class="nav-link text-light bg-dark  fs-4" >  
         <i class="fas fa-calendar-alt mr-3 text-secondary "></i>
         Attendance
     </a>
   </li> 
   <li class="nav-item  ">
-    <a href="#" class="nav-link text-light bg-dark  fs-4" >  
+    <a href="timetable.php" class="nav-link text-light bg-dark  fs-4" >  
         <i class="fas fa-th-large mr-3 text-secondary "></i>
         Timetable
     </a>
   </li> 
   <li class="nav-item  ">
-    <a href="#" class="nav-link text-light bg-dark  fs-4 " >  
+    <a href="ebookshow.php" class="nav-link text-light bg-dark  fs-4 " >  
         <i class="fas fa-book-open mr-3 text-secondary"></i>
         E-book
     </a>
@@ -132,7 +135,7 @@ while($rows=mysqli_fetch_array($result)){
       <div class="col-lg-12">
         <div class="card mb-4">
         <div class="card-body text-center">
-            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+            <img src="images/att.png" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
             <h5 class="my-3"><?php  echo  $_SESSION['username'] ?></h5>
           </div>
           <div class="card-body">
@@ -165,10 +168,10 @@ while($rows=mysqli_fetch_array($result)){
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Father Name</p>
+                <p class="mb-0">DOB</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">Akash kaur</p>
+                <p class="text-muted mb-0"><?php echo $rows['dob']; ?></p>
               </div>
             </div>
             <hr>
@@ -177,7 +180,16 @@ while($rows=mysqli_fetch_array($result)){
                 <p class="mb-0">Mobile</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">(098) 765-4321</p>
+                <p class="text-muted mb-0"><?php echo $rows['mno']; ?></p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Gender</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0"><?php echo $rows['gender']; ?></p>
               </div>
             </div>
             <hr>
@@ -186,9 +198,10 @@ while($rows=mysqli_fetch_array($result)){
                 <p class="mb-0">Class</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0"><?php echo $rows['sclass']; ?></p>
+                <p class="text-muted mb-0"><?php echo $rows['sclass']; ?> (<?php echo $rows['section']; ?>)</p>
               </div>
             </div>
+            <hr>
           </div>
         </div>
         </div>

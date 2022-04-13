@@ -1,7 +1,10 @@
 <?php
 include 'dbcon.php';
  session_start();
- 
+ if(!isset($_SESSION['username']))
+  {
+   echo "logged out";  
+ header('location:index.php'); }
 ?>
 
 
@@ -75,32 +78,32 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
     </a>
   </li>       
   <li class="nav-item  ">
-    <a href="#" class="nav-link text-light bg-dark fw-bold fs-4" >  
-        <i class="fas fa-th-large mr-3 text-primary"></i>
+    <a href="student_profile.php" class="nav-link text-light bg-dark fs-4" >  
+        <i class="fas fa-th-large mr-3 text-secondary"></i>
         Profile
     </a>
   </li>  
   <li class="nav-item  ">
-    <a   href="#" class="nav-link text-light bg-dark  fs-4" >  
+    <a   href="find_result.php" target="_blank"  class="nav-link text-light bg-dark  fs-4" >  
         <i class="fas fa-th-large mr-3 text-secondary "></i>
         Result
     </a>
   </li>  
   <li class="nav-item  ">
-    <a href="#" class="nav-link text-light bg-dark  fs-4" >  
+    <a href="student_attendance.php" class="nav-link text-light bg-dark  fs-4" >  
         <i class="fas fa-calendar-alt mr-3 text-secondary "></i>
         Attendance
     </a>
   </li> 
   <li class="nav-item  ">
-    <a href="#" class="nav-link text-light bg-dark  fs-4" >  
+    <a href="timetable.php" class="nav-link text-light bg-dark  fs-4" >  
         <i class="fas fa-th-large mr-3 text-secondary "></i>
         Timetable
     </a>
   </li> 
   <li class="nav-item  ">
-    <a href="#" class="nav-link text-light bg-dark  fs-4 " >  
-        <i class="fas fa-book-open mr-3 text-secondary"></i>
+    <a href="ebookshow.php" class="nav-link text-light bg-dark fw-bold  fs-4 " >  
+        <i class="fas fa-book-open mr-3 text-primary"></i>
         E-book
     </a>
   </li> 
@@ -120,7 +123,7 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
   <div class="container  mt-2">
     
 <table class="table table-responsive table-bordered px-2 bg-white table-shadow" id="myTable">
-              <thead class="bg-secondary"> 
+              <thead class="bg-secondary text-white"> 
                   <tr>
                       <th >FileName</th>
                       <th>DownloadlINK</th>
@@ -128,7 +131,7 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
               </thead>
               <tbody>
     <?php
-$sql="SELECT * FROM ebook";
+$sql="SELECT * FROM ebook1";
 $result=mysqli_query($con,$sql);
 ?>
 <?php

@@ -21,7 +21,7 @@ if(!isset($_SESSION['name']))
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
     <!-- custom css -->
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
     
  
 
@@ -77,26 +77,26 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
           <div class="collapse navbar-collapse order-last align-self-start" id="nav">
           <ul class="nav flex-column mb-0">
   <li class="nav-item  ">
-    <a href="homepg.php" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
-        <i class="fas fa-school mr-3 text-primary" style="margin:3px 4px 3px 4px;"></i>
+    <a href="teacherdash.php" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+        <i class="fas fa-school mr-3 text-secondary" style="margin:3px 4px 3px 4px;"></i>
         Dashboard
     </a>
   </li>       
   <li class="nav-item  ">
-    <a href="#" class="nav-link text-light bg-dark fs-4" style="margin-left:2px">  
+    <a href="details_student.php" class="nav-link text-light bg-dark fs-4" style="margin-left:2px">  
         <i class="fas fa-user-circle mr-3 text-secondary" style="margin:3px 4px 3px 4px;"></i>
         Student Details
     </a>
   </li>  
   <li class="nav-item  ">
-    <a   href="#" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+    <a   href="result_index.php" target="_blank"  class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
         <i class="fas fa-th-large mr-3 text-secondary "  style="margin:3px 4px 3px 4px;" ></i>
         Result
     </a>
   </li>  
   <li class="nav-item  ">
-    <a href="#" class="nav-link text-light bg-dark fw-bold fs-4" style="margin-left:2px">  
-        <i class="fas fa-calendar-alt mr-3 text-secondary "  style="margin:3px 4px 3px 4px;"></i>
+    <a href="attendance.php" class="nav-link text-light bg-dark fw-bold fs-4" style="margin-left:2px">  
+        <i class="fas fa-calendar-alt mr-3 text-primary "  style="margin:3px 4px 3px 4px;"></i>
         Attendance
     </a>
   </li> 
@@ -107,7 +107,25 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
     </a>
   </li> 
   <li class="nav-item  ">
-    <a href="#" class="nav-link text-light bg-dark  fs-4 " style="margin-left:2px">  
+    <a href="add_subject.php" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+        <i class="fas fa-th-large mr-3 text-secondary "  style="margin:3px 4px 3px 4px;"></i>
+        Add Subject
+    </a>
+  </li> 
+  <li class="nav-item  ">
+    <a href="add_teacher.php" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+        <i class="fas fa-th-large mr-3 text-secondary "  style="margin:3px 4px 3px 4px;"></i>
+        Add Teacher
+    </a>
+  </li>
+  <li class="nav-item  ">
+    <a href="add_class.php" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+        <i class="fas fa-th-large mr-3 text-secondary "  style="margin:3px 4px 3px 4px;"></i>
+        Add Class
+    </a>
+  </li>
+  <li class="nav-item  ">
+    <a href="ebook.php" target="_blank" class="nav-link text-light bg-dark  fs-4 " style="margin-left:2px">  
         <i class="fas fa-book-open mr-3 text-secondary"  style="margin:3px 4px 3px 4px;" ></i>
         E-book
     </a>
@@ -130,13 +148,12 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
       </div>
       <div class="panel-body table-responsive py-4 ">
           <a href="attendance_view.php" class="btn btn-primary">View</a>
-          <input type="text" id="search" ></input>
-           <div id="searchresult"></div>
+          
           <p><?php echo date('d-m-y')?></p>
           <form action="attendance.php" method="POST">
            
-          <table class="table table-responsive table-bordered px-2" id="myTable">
-              <thead>
+          <table class="table table-responsive table-bordered table-striped bg-light px-2" id="myTable">
+              <thead class="bg-secondary text-white">
                   <tr>
                       <th>UID</th>
                       <th>Name</th>
@@ -148,7 +165,7 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
                   <?php
                      
                      $name=$_SESSION['name'];
-                    $query="select * from student where sclass in (select cstd from class where cteacher='$name')";
+                    $query="select * from student where sclass in (select cstd from class where cteacher='$name') and section in (select section from class where cteacher='$name')";
                     $result=mysqli_query($con,$query);
                     while($show =mysqli_fetch_array($result)){
 
@@ -157,7 +174,7 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
                   <tr>
                   <td><?php echo $show['uid']; ?></td>
                   <td><?php echo $show['sname']; ?></td>
-                  <td><?php echo $show['sclass']; ?></td>
+                  <td><?php echo $show['sclass']; ?> (<?php echo $show['section']; ?>)</td>
                   <td>
                      Present<input type="radio" name="attendance[<?php echo $show['uid']; ?>]" value="Present"  required > 
                      Absent<input type="radio" name="attendance[<?php echo $show['uid']; ?>]" value="Absent"  >
@@ -230,25 +247,7 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js" integrity="sha384-5h4UG+6GOuV9qXh6HqOLwZMY4mnLPraeTrjT5v07o347pj6IkfuoASuGBhfDsp3d" crossorigin="anonymous"></script>
     <!-- custom js -->
-    <script>
-      $(document).ready(function() {
-    $("#search").keyup(function(){
-       var input=$(this).val();
-      //  alert(input);
-       if(input != ""){
-         $.ajax({
-           url:"abc.php",
-           method:"POST",
-           data:{input:input},
-           success:function(data){
-             $("#searchresult").html(data);
-           }
-         });
-       }else{
-        $("#searchresult").css("display","none");
-       }
-    });
-} );
+ 
     </script>
 
    
