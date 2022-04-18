@@ -117,7 +117,7 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
       <div class="col-12 col-md-3 col-xl-2 p-0 bg-dark ">
         <nav class="navbar navbar-expand-md navbar-dark bd-dark flex-md-column flex-row  py-2  sticky-top " id="sidebar">
           <div class="text-center p-3">
-            <img src="images/attendence.jpg" alt="profile picture" class="img-fluid rounded-circle my-4 p-1 d-none d-md-block shadow sizeimg"  />
+            <img src="images/s1logo.png" alt="profile picture" class="img-fluid rounded-circle my-4 p-1 d-none d-md-block shadow"  />
            <a href="#" class="navbar-brand mx-0 fw-bolder fs-3 text-nowrap"  style="color:coral" ><?php echo $_SESSION['name'];?></a>
           </div>
               <button type="button" class="navbar-toggler border-0 order-1" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -127,61 +127,61 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
           <div class="collapse navbar-collapse order-last align-self-start" id="nav">
           <ul class="nav flex-column mb-0">
   <li class="nav-item  ">
-    <a href="teacherdash.php" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+    <a href="teacherdash.php" class="nav-link text-light bg-dark  fs-5" style="margin-left:2px">  
         <i class="fas fa-school mr-3 text-secondary" style="margin:3px 4px 3px 4px;"></i>
         Dashboard
     </a>
   </li>       
   <li class="nav-item  ">
-    <a href="details_student.php" class="nav-link text-light bg-dark fs-4" style="margin-left:2px">  
+    <a href="details_student.php" class="nav-link text-light bg-dark fs-5" style="margin-left:2px">  
         <i class="fas fa-user-circle mr-3 text-secondary" style="margin:3px 4px 3px 4px;"></i>
         Student Details
     </a>
   </li>  
   <li class="nav-item  ">
-    <a   href="result_index.php" target="_blank" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+    <a   href="result_index.php" target="_blank" class="nav-link text-light bg-dark  fs-5" style="margin-left:2px">  
         <i class="fas fa-th-large mr-3 text-secondary "  style="margin:3px 4px 3px 4px;" ></i>
         Result
     </a>
   </li>  
   <li class="nav-item  ">
-    <a href="attendance.php" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+    <a href="attendance.php" class="nav-link text-light bg-dark  fs-5" style="margin-left:2px">  
         <i class="fas fa-calendar-alt mr-3 text-secondary "  style="margin:3px 4px 3px 4px;"></i>
         Attendance
     </a>
   </li> 
   <li class="nav-item  ">
-    <a href="add_student.php" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+    <a href="add_student.php" class="nav-link text-light bg-dark  fs-5" style="margin-left:2px">  
         <i class="fas fa-th-large mr-3 text-secondary"  style="margin:3px 4px 3px 4px;"></i>
         Add Student
     </a>
   </li> 
   <li class="nav-item  ">
-    <a href="add_subject.php" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+    <a href="add_subject.php" class="nav-link text-light bg-dark  fs-5" style="margin-left:2px">  
         <i class="fas fa-th-large mr-3 text-secondary "  style="margin:3px 4px 3px 4px;"></i>
         Add Subject
     </a>
   </li> 
   <li class="nav-item  ">
-    <a href="add_teacher.php" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px">  
+    <a href="add_teacher.php" class="nav-link text-light bg-dark  fs-5" style="margin-left:2px">  
         <i class="fas fa-th-large mr-3 text-secondary "  style="margin:3px 4px 3px 4px;"></i>
         Add Teacher
     </a>
   </li>
   <li class="nav-item  ">
-    <a href="add_class.php" class="nav-link text-light bg-dark fw-bold fs-4" style="margin-left:2px">  
+    <a href="add_class.php" class="nav-link text-light bg-dark fw-bold fs-5" style="margin-left:2px">  
         <i class="fas fa-th-large mr-3 text-primary "  style="margin:3px 4px 3px 4px;"></i>
         Add Class
     </a>
   </li>
   <li class="nav-item  ">
-    <a href="ebook.php" target="_blank" class="nav-link text-light bg-dark  fs-4 " style="margin-left:2px">  
+    <a href="ebook.php" target="_blank" class="nav-link text-light bg-dark  fs-5" style="margin-left:2px">  
         <i class="fas fa-book-open mr-3 text-secondary"  style="margin:3px 4px 3px 4px;" ></i>
         E-book
     </a>
   </li> 
   <li class="nav-item  ">
-    <a href="logout.php" class="nav-link text-light bg-dark  fs-4" style="margin-left:2px" >  
+    <a href="logout.php" class="nav-link text-light bg-dark  fs-5" style="margin-left:2px" >  
         <i class="fas fa-sign-out-alt mr-3 text-secondary"  style="margin:3px 4px 3px 4px;"></i>
         Logout
     </a>
@@ -238,35 +238,35 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col">
-        <div class="card card-registration my-4">
+        <div class="card card-registration bg-transparent border border-3 my-4">
             <div class="col-xl-12">
               <div class="card-body p-md-5 text-black">
-                <h3 class="mb-5 text-uppercase">Add Class</h3>
+                <h3 class="mb-5 text-uppercase text-center  "><strong>Add Class</strong></h3>
 
                 <div class="row">
                   <form class="" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-                  <div class="col-md-6 mb-4">
+                  <!-- <div class="col-md-6 mb-4"> -->
                     <div class="form-outline">
                       <input type="number" id="sname" name="stuclass" class="form-control form-control-lg" required />
                       <label class="form-label" for="form3Example1m">Standard</label>
                     </div>
-                  </div>
-                  <div class="col-md-6 mb-4">
+                  <!-- </div> -->
+                  <!-- <div class="col-md-6 mb-4"> -->
                     <div class="form-outline">
                       <input type="text" id="form3Example1n"  name="section" class="form-control form-control-lg"  required/>
                       <label class="form-label" for="form3Example1n">Section</label>
                     </div>
-                  </div>
+                  <!-- </div> -->
                 </div>
 
                 <div class="row">
 
-                  <div class="col-md-6 mb-4">
+                  <!-- <div class="col-md-6 mb-4"> -->
                     <div class="form-outline">
                       <input type="text" id="tname" name="tname" class="form-control form-control-lg" required />
                       <label class="form-label" for="form3Example1n1">teacher name</label>
                     </div>
-                  </div>
+                  <!-- </div> -->
                 </div>
 
                 

@@ -47,6 +47,14 @@ echo "<script type='text/javascript'> document.location = 'add_result.php'; </sc
         <link rel="stylesheet" href="loading.css">
         <script src="js/modernizr.min.js"></script>
     </head>
+    <style>
+  body {
+  background: rgb(223,118,138);
+background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.7063200280112045) 43%, rgba(190,209,163,1) 100%);
+ 
+}
+ 
+</style>
     <body class="">
         <div class="main-wrapper">
 
@@ -64,20 +72,28 @@ echo "<script type='text/javascript'> document.location = 'add_result.php'; </sc
                                             <div class="panel">
                                                 <div class="panel-heading">
                                                     <div class="panel-title text-center">
+                                                    <div class="text-center">
+ <img src="images/s1logo.png" alt="profile picture" class="img-fluid rounded-circle my-4 p-1 d-none d-md-block shadow"  />
+</div>
                                                         <h4>For Students</h4>
                                                     </div>
                                                 </div>
                                                 <div class="panel-body p-20">
 
-                                                    <div class="section-title">
+                                                    <div class="section-title text-center">
                                                         <p class="sub-title">Student Result Management System</p>
+                                                        <button type="button" name="in" class="btn btn-success btn-labeled "><a href="find_result.php" class=" "  >Search your result</a><span class="btn-label btn-label-right"><i class="fa fa-check"></i></span></button>
                                                     </div>
-
+                                                       
                                                     <form class="form-horizontal" method="post">
-                                                        <div class="form-group">
-                                                            <label for="inputEmail3" class="col-sm-6 control-label">Search your result</label>
+                                                        <div class="form-group center">
+                                                     
+
+                                                    			
+                                                    		
+                                                        <!-- <label for="inputEmail3" class="col-sm-6 control-label"><a href="find_result.php"></a></label> -->
                                                             <div class="col-sm-6">
-                                                               <a href="find_result.php">click here</a>
+                                                               
                                                             </div>
                                                         </div>
 
@@ -115,7 +131,7 @@ echo "<script type='text/javascript'> document.location = 'add_result.php'; </sc
                                                 </div>
                                                 <div class="panel-body p-20">
 
-                                                    <div class="section-title">
+                                                    <div class="section-title text-center">
                                                         <p class="sub-title">Student Result Management System</p>
                                                     </div>
 

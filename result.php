@@ -22,29 +22,43 @@ include('dbcon.php');
     <style>
          body {
              background: rgb(223,118,138);
-background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.7063200280112045) 43%, rgba(190,209,163,1) 100%);}
+             background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.7063200280112045) 43%, rgba(190,209,163,1) 100%);
+            }
+            /* .panel{
+            background-color: transparent;
+            border: 5px solid white;
+        } */
+            .page-title-div{
+                background-color: transparent;
+            }
+            .imgcl{
+                margin-left:50px;
+            }
+            
         </style>
     <body>
-        <div class="main-wrapper">
+        <div class=" main-wrapper">
             <div class="content-wrapper">
                 <div class="content-container">
 
          
                     <!-- /.left-sidebar -->
-
+                    
                     <div class="main-page">
+                       
                         <div class="container-fluid">
                             <div class="row page-title-div">
-                                <div class="col-md-12">
-                                    <h2 class="title" align="center">Result Portal</h2>
+                                <div class="col-md-12 ">
+                                    <h2 class="title" align="center"><strong>Result Portal</strong></h2>
                                 </div>
                             </div>
                             <!-- /.row -->
                           
                             <!-- /.row -->
-                        </div>
+                        
                         <!-- /.container-fluid -->
-
+                           </div>
+                           <!-- <div class="bg-transparent"> -->
                         <section class="section bg-transparent">
                             <div class="container-fluid ">
 
@@ -52,9 +66,9 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
                               
                              
 
-                                    <div class="col-md-8 col-md-offset-2 ">
-                                        <div class="panel">
-                                            <div class="panel-heading">
+                                    <div class="col-md-12 ">
+                                        <div class="panel border border-3">
+                                            <div class="panel-heading ">
                                                 <div class="panel-title">
 <?php
 
@@ -62,7 +76,7 @@ $rollid=$_POST['rollid'];
 $classid=$_POST['class'];
 $_SESSION['rollid']=$rollid;
 $_SESSION['classid']=$classid;
-$qery = "SELECT   student.sname,student.uid,student.sid,class.cstd,class.section from student join class on class.cid=student.clid where student.uid='$rollid' and student.clid='$classid' ";
+$qery = "SELECT  student.sname,student.uid,student.sid,class.cstd,class.section from student join class on class.cid=student.clid where student.uid='$rollid' and student.clid='$classid' ";
 // $stmt = $dbh->prepare($qery);
 // $stmt->bindParam(':rollid',$rollid,PDO::PARAM_STR);
 // $stmt->bindParam(':classid',$classid,PDO::PARAM_STR);
@@ -80,8 +94,8 @@ while($row=mysqli_fetch_array($searchqery))
 </div>
 <div>
     <div class="row">
-   <div class="col-md-2 ">   
-<img src="images/s1img.png" alt="profile picture" class="img-fluid rounded-circle my-4  p-1 d-none d-md-block shadow"  />
+   <div class="col-md-2">   
+<img src="images/s1img.png" alt="profile picture" class="img-fluid imgcl rounded-circle my-4 d-none d-md-block shadow"  />
 </div>
 <div class="col-md-4"> 
 <p><b>Student Name :</b> <?php echo $row['sname'];?></p>
@@ -193,7 +207,7 @@ echo htmlentities("Invalid Roll Id");
                             <!-- /.container-fluid -->
                         </section>
                         <!-- /.section -->
-
+                        <!-- </div> -->
                     </div>
                     <!-- /.main-page -->
 

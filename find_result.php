@@ -17,10 +17,16 @@ include('dbcon.php');?>
         <link rel="stylesheet" href="loading.css"></link>
         <script src="js/modernizr.min.js"></script>
     </head>
+    <style>
+         body {
+  background: rgb(223,118,138);
+background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.7063200280112045) 43%, rgba(190,209,163,1) 100%);
+         }
+        </style>
     <body class="">
         <div class="main-wrapper">
 
-            <div class="login-bg-color bg-black-300">
+            <div class="login-bg-color ">
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4">
                         <div class="panel login-box">
@@ -36,7 +42,7 @@ include('dbcon.php');?>
                                 <form action="result.php" method="post">
                                 	<div class="form-group">
                                 		<label for="rollid">Enter your Roll Id</label>
-                                        <input type="text" class="form-control" id="rollid" placeholder="Enter Your Roll Id" autocomplete="off" name="rollid">
+                                        <input type="text" class="form-control" id="rollid" placeholder="Enter Your Roll Id" autocomplete="off" name="rollid" required>
                                 	</div>
                                <div class="form-group">
                                                         <label for="default" class="col-sm-2 control-label">Class</label>
@@ -66,10 +72,10 @@ while($result=mysqli_fetch_array($checksql))
                                             <div class="clearfix"></div>
                                         </div>
                                     </div>
-
+<!-- 
                                        <div class="col-sm-6">
                                                                <a href="">Back to Home</a>
-                                                            </div>
+                                                            </div> -->
                                 </form>
 
                                 <hr>
@@ -77,7 +83,7 @@ while($result=mysqli_fetch_array($checksql))
                             </div>
                         </div>
                         <!-- /.panel -->
-                        <p class="text-muted text-center"><small>Copyright © 2020 SRMS</small></p>
+                        <p class="text-muted text-center"><small>Copyright © 2022 SRS</small></p>
                     </div>
                     <!-- /.col-md-6 col-md-offset-3 -->
                 </div>

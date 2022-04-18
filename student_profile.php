@@ -29,11 +29,7 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
   min-height: 100vh;
   overflow-x: hidden;
 }
-  .sizeimg{
-      width:60%;
-      height:100px;
-  }
- 
+  
   .card{
           margin: auto;
           width: 70%;
@@ -62,7 +58,7 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
       <div class="col-12 col-md-3 col-xl-2 p-0 bg-dark ">
         <nav class="navbar navbar-expand-md navbar-dark bd-dark flex-md-column flex-row  py-2  sticky-top " id="sidebar">
           <div class="text-center p-3">
-            <img src="images/school_logo.png" alt="profile picture" class="img-fluid rounded-circle d-none d-md-block shadow "  />
+            <img src="images/s1logo.png" alt="profile picture" class="img-fluid rounded-circle my-4 p-1  d-none d-md-block shadow "  />
            <a href="#" class="navbar-brand mx-0 fw-bolder fs-3 text-nowrap"  style="color:coral" > <?php  echo  $_SESSION['username'] ?> </a>
           </div>
               <button type="button" class="navbar-toggler border-0 order-1" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -96,7 +92,7 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
     </a>
   </li> 
   <li class="nav-item  ">
-    <a href="timetable.php" class="nav-link text-light bg-dark  fs-4" >  
+    <a href="timetable.php" target="_blank" class="nav-link text-light bg-dark  fs-4" >  
         <i class="fas fa-th-large mr-3 text-secondary "></i>
         Timetable
     </a>

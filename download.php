@@ -24,6 +24,14 @@ if (!$id) {
 
 	<title>File Upload</title>
 </head>
+<style>
+  body {
+  background: rgb(223,118,138);
+background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.7063200280112045) 43%, rgba(190,209,163,1) 100%);
+ 
+}
+
+</style>
 <body>
 	<div class="file__upload">
 		<div class="header">
