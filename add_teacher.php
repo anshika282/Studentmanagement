@@ -29,24 +29,30 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
           $query1 = mysqli_query($con,$stucheck1);
         	$stucount1=mysqli_num_rows($query1);              
 	          if($stucount1==0){
-                     // Password Hashing is used here. 
-					 // The hash of the password that
-					 // can be stored in the database
+          //            Password Hashing is used here. 
+					//  The hash of the password that
+					//  can be stored in the database
          
-					        //   $hash = password_hash($tpassword, PASSWORD_DEFAULT);
-                     $stuentry = "INSERT INTO `teacher` (`tid`, `tname`, `email`, `password`) VALUES (NULL, '$tname', '$temail', '$tpassword')";
+					          $hash = password_hash($tpassword, PASSWORD_DEFAULT);
+                     $stuentry = "INSERT INTO `teacher` (`tid`, `tname`, `email`, `password`) VALUES (NULL, '$tname', '$temail', '$hash')";
 
                      $result = mysqli_query($con, $stuentry);
                      if ($result) {
 						            $showAlert = true;	 	  
                      }else{
-                       $showError = "Some error in updating database";
+                      //  $showError = "";
+                       echo '<script type ="text/JavaScript">';  
+                       echo 'alert("Some error in updating database!")';  
+                       echo '</script>';
                      }
                  }     
          
        if($stucount1>0) 
    {
-      $exists="Teacher name or email already exists "; 
+      // $exists=""; 
+      echo '<script type ="text/JavaScript">';  
+      echo 'alert("Teacher name or email already exists!")';  
+      echo '</script>';
    } 
 	
 	
@@ -243,7 +249,7 @@ if($exists) {
                 <div class="row">
                   <div class="col-md-12 mb-4">
                     <div class="form-outline">
-                      <input type="text" id="tpwd" name="tpwd" class="form-control form-control-lg" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                      <input type="password" id="tpwd" name="tpwd" class="form-control form-control-lg" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
   title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required />
                       <label class="form-label" for="form3Example1n1">Password</label>
                     </div>
@@ -255,7 +261,8 @@ if($exists) {
                  
                 </div> -->
                 <div class="form-outline mb-4">
-                  <input type="email" id="email" name="email" class="form-control form-control-lg" required/>
+                  <input type="text" id="email" name="email" class="form-control form-control-lg" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                  title="Must contain a @ and . and right pattern " required/>
                   <label class="form-label" for="email">Email ID</label>
                 </div>
 

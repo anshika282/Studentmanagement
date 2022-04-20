@@ -50,12 +50,16 @@ padding: 30px;
 <body>
     
     <?php
-    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-<strong>Success!</strong> OTP succesfully sent to your email!
-<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-  <span aria-hidden="true">&times;</span>
-</button>
-</div>';
+//     echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+// <strong>Success!</strong> OTP succesfully sent to your email!
+// <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+//   <span aria-hidden="true">&times;</span>
+// </button>
+// </div>';
+echo '<script type ="text/JavaScript">';  
+             echo 'alert("Success! OTP succesfully sent to your email")';  
+             echo '</script>'
+
 ?>  
     <section class="container-fluid">
     <!-- row and justify-content-center class is used to place the form in center -->

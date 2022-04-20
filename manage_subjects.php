@@ -3,13 +3,15 @@
 session_start();
 error_reporting(0);
 include('dbcon.php');
+
 $msg="";
 $error="";
 
-// if(strlen($_SESSION['alogin'])=="")
+
 if(false)
     {   
-    header("Location: index.php"); 
+    echo "logged out";  
+header('location:index.php'); 
     }
     else{
 
@@ -62,7 +64,7 @@ if(false)
                         <div class="container-fluid">
                             <div class="row page-title-div">
                                 <div class="col-md-6">
-                                    <h2 class="title">Manage Students</h2>
+                                    <h2 class="title">Manage Subjects</h2>
                                 
                                 </div>
                                 
@@ -74,7 +76,7 @@ if(false)
                                     <ul class="breadcrumb">
             							<li><a href="add_result.php"><i class="fa fa-home"></i> Home</a></li>
                                         <li> Students</li>
-            							<li class="active">Manage Students</li>
+            							<li class="active">Manage Subjects</li>
             						</ul>
                                 </div>
                              
@@ -94,7 +96,7 @@ if(false)
                                         <div class="panel">
                                             <div class="panel-heading">
                                                 <div class="panel-title">
-                                                    <h5>View Students Info</h5>
+                                                    <h5>View Subjects Info</h5>
                                                 </div>
                                             </div>
 <?php if($msg){?>
@@ -112,9 +114,9 @@ else if($error){?>
                                                     <thead>
                                                         <tr>
                                                             <th>#</th>
-                                                            <th>Student Name</th>
-                                                            <th>Roll Id</th>
-                                                            <th>Class</th>
+                                                            <th>SubjectName</th>
+                                                            <th>Teacher name</th>
+                                                            <th>Class ID</th>
                                                             <!-- <th>Reg Date</th> -->
                                                             <!-- <th>Status</th> -->
                                                             <th>Action</th>
@@ -123,18 +125,19 @@ else if($error){?>
                                                     <tfoot>
                                                         <tr>
                                                           <th>#</th>
-                                                            <th>Student Name</th>
-                                                            <th>Roll Id</th>
-                                                            <th>Class</th>
+                                                            <th>Subject Name</th>
+                                                            <th>Teacher name</th>
+                                                            <th>Class ID</th>
                                                             <!-- <th>Reg Date</th> -->
                                                             <!-- <th>Status</th> -->
                                                             <th>Action</th>
                                                         </tr>
                                                     </tfoot>
                                                     <tbody>
-<?php $sql = "SELECT  distinct student.sname,student.uid,class.cstd,class.section from result join student on student.uid=result.stuid  join class on class.cid=result.classid";
+<?php 
+$subjname="suresh kumar";
+$sql = " Select * from subject";
 $queryshow=mysqli_query($con,$sql);
-// $results=mysqli_fetch_array($queryshow);
 $cnt=1;
 if(mysqli_num_rows($queryshow)> 0)
 {
@@ -142,9 +145,9 @@ while($result=mysqli_fetch_array($queryshow))
 {   ?>
 <tr>
  <td><?php echo $cnt;?></td>
-                                                            <td><?php echo $result['sname'];?></td>
-                                                            <td><?php echo $result['uid'];?></td>
-                                                            <td><?php echo $result['cstd'];?>(<?php echo $result['section'];?>)</td>
+                                                            <td><?php echo $result['subjname'];?></td>
+                                                            <td><?php echo $result['subteacher'];?></td>
+                                                            <td><?php echo $result['c_id'];?></td>
                                                             <!-- <td><php echo htmlentities($result->RegDate);?></td> -->
                                                              <!-- <td><php if($result->Status==1){
 echo htmlentities('Active');
@@ -154,7 +157,7 @@ else{
 }
                                                                 ?></td> -->
 <td>
-<a href="edit_result.php?stid=<?php echo $result['uid'];?>"><i class="fa fa-edit" title="Edit Record"></i> </a> 
+<a href="delete_subject.php?sbid=<?php echo $result['sbid'];?>"><i class="fa fa-edit" title="Edit Record"></i> </a> 
 
 </td>
 </tr>

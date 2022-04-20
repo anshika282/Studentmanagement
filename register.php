@@ -245,7 +245,8 @@ if($exists) {
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="email" name="email" id="form3Example97" class="form-control form-control-lg" required/>
+                  <input type="text" name="email" id="form3Example97" class="form-control form-control-lg" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                  title="Must contain a @ and . and right pattern " required/>
                   <label class="form-label" for="form3Example97">Email ID</label>
                 </div>
                 

@@ -164,7 +164,7 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
                
 
                 <div class=" row d-flex  pt-3">
-                  <button type="button" class="btn btn-primary btn-lg ">Reset all</button>
+                  <button type="reset" class="btn btn-primary btn-lg ">Reset all</button>
                   <button type="submit" class="btn btn-warning btn-lg ">Submit form</button>
                 </div>
 

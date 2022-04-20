@@ -132,47 +132,7 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
   }
 </style>
 <body>
-<?php
-if($showAlert) {
-    
-	echo ' <div class="alert alert-success 
-		alert-dismissible fade show" role="alert">
 
-		<strong>Success!</strong> Student  account is 
-		now created and you can login. 
-		<button type="button" class="close"
-			data-dismiss="alert" aria-label="Close"> 
-			<span aria-hidden="true">&times;</span> 
-		</button> 
-	</div> '; 
-}
-
-if($showError) {
-
-	echo ' <div class="alert alert-danger 
-		alert-dismissible fade show" role="alert"> 
-	<strong>Error!</strong> '. $showError.'
-
-   <button type="button" class="close" 
-		data-dismiss="alert" aria-label="Close">
-		<span aria-hidden="true">&times;</span> 
-   </button> 
- </div> '; 
-}
-	
-if($exists) {
-	echo ' <div class="alert alert-danger 
-		alert-dismissible fade show" role="alert">
-
-	<strong>Error!</strong> '. $exists.'
-	<button type="button" class="close" 
-		data-dismiss="alert" aria-label="Close"> 
-		<span aria-hidden="true">&times;</span> 
-	</button>
-   </div> '; 
- }
-
-?>
 <div class="container-fluid">
     <div class="row min-vh-100 flex-column flex-md-row">
       <div class="col-12 col-md-3 col-xl-2 p-0 bg-dark ">
@@ -253,7 +213,47 @@ if($exists) {
 </div>   
 
   <main class="col px-0 flex-grow-1">
+<?php
+if($showAlert) {
+    
+	echo ' <div class="alert alert-success 
+		alert-dismissible fade show" role="alert">
 
+		<strong>Success!</strong> Student  account is 
+		now created and you can login. 
+		<button type="button" class="close"
+			data-dismiss="alert" aria-label="Close"> 
+			<span aria-hidden="true">&times;</span> 
+		</button> 
+	</div> '; 
+}
+
+if($showError) {
+
+	echo ' <div class="alert alert-danger 
+		alert-dismissible fade show" role="alert"> 
+	<strong>Error!</strong> '. $showError.'
+
+   <button type="button" class="close" 
+		data-dismiss="alert" aria-label="Close">
+		<span aria-hidden="true">&times;</span> 
+   </button> 
+ </div> '; 
+}
+	
+if($exists) {
+	echo ' <div class="alert alert-danger 
+		alert-dismissible fade show" role="alert">
+
+	<strong>Error!</strong> '. $exists.'
+	<button type="button" class="close" 
+		data-dismiss="alert" aria-label="Close"> 
+		<span aria-hidden="true">&times;</span> 
+	</button>
+   </div> '; 
+ }
+
+?>
    <section class="h-100 ">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -276,14 +276,16 @@ if($exists) {
                 <div class="row">
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                      <input type="text" id="uid" name="uid" class="form-control form-control-lg" required/>
+                      <input type="text" id="uid" name="uid" class="form-control form-control-lg"  pattern="\b(1[0-9][0-9][0-9]|25[0-5])" 
+                   title="should start with 1... and 4 digit only" required/>
                       <label class="form-label" for="form3Example1n">UID</label>
                     </div>
                   </div>
 
                   <div class="col-md-6 mb-4">
                   <div class="form-outline">
-                  <input type="number" id="classid" name="classid" class="form-control form-control-lg" required/>
+                  <input type="text" id="classid" name="classid" class="form-control form-control-lg" placeholder="ex:201,204" pattern="\b(2[0-9][0-9]|25[0-5])" 
+                   title="should start with 2.. and 3 digit only" required/>
                   <label class="form-label" for="email">ClassId</label>
                  </div> 
                 </div>
@@ -299,7 +301,8 @@ if($exists) {
                   </div>
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                      <input type="text" id="passs" name="spwd" class="form-control form-control-lg" required />
+                      <input type="password" id="passs" name="spwd" class="form-control form-control-lg"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+  title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required />
                       <label class="form-label" for="form3Example1n1">Password</label>
                     </div>
                   </div>
@@ -396,7 +399,8 @@ if($exists) {
                 
 
                 <div class="form-outline mb-4">
-                  <input type="email" id="email" name="email" class="form-control form-control-lg" required/>
+                  <input type="text" id="email" name="email" class="form-control form-control-lg" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                  title="Must contain a @ and . and right pattern "  required/>
                   <label class="form-label" for="email">Email ID</label>
                 </div>
 

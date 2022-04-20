@@ -35,21 +35,33 @@ if($subcount==0){
                       if ($result6) {
                            $showAlert = true;
                      }else{
-                           $showError="Logical error in input given";
+                          //  $showError="";
+                           echo '<script type ="text/JavaScript">';  
+                           echo 'alert("CLogical error in input given")';  
+                           echo '</script>';
                                    }
               
             }else{
-                 $showError="Teacher already assigned to a class";
+                //  $showError="";
+                echo '<script type ="text/JavaScript">';  
+                echo 'alert("Teacher already assigned to a class")';  
+                echo '</script>'; 
                }  
          }else{
-             $showError="Classid already  exists";
+            //  $showError="";
+            echo '<script type ="text/JavaScript">';  
+            echo 'alert("Classid already  exists!")';  
+            echo '</script>'; 
                 }
         
      }   
 
 if($subcount>0) 
 {
-$exists="Class already exists "; 
+  echo '<script type ="text/JavaScript">';  
+  echo 'alert("Classid already  exists!")';  
+  echo '</script>';
+// $exists="Class already exists "; 
 } 
 
 } 
@@ -247,8 +259,8 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
                   <form class="" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                   <!-- <div class="col-md-6 mb-4"> -->
                     <div class="form-outline">
-                      <input type="number" id="sname" name="stuclass" class="form-control form-control-lg" required />
-                      <label class="form-label" for="form3Example1m">Standard</label>
+                      <input type="number" id="sname" name="stuclass" class="form-control form-control-lg" placeholder="ex:10,12" required />
+                      <label class="form-label" for="form3Example1m">class/Standard</label>
                     </div>
                   <!-- </div> -->
                   <!-- <div class="col-md-6 mb-4"> -->
@@ -263,7 +275,8 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
 
                   <!-- <div class="col-md-6 mb-4"> -->
                     <div class="form-outline">
-                      <input type="text" id="tname" name="tname" class="form-control form-control-lg" required />
+                      <input type="text" id="tname" name="tname" class="form-control form-control-lg" pattern="^([a-zA-Z' ']+)$"
+                       title="only character and spaces allowed" required />
                       <label class="form-label" for="form3Example1n1">teacher name</label>
                     </div>
                   <!-- </div> -->
@@ -275,7 +288,8 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
                 </div> -->
 
                  <div class="form-outline mb-4">
-                   <input type="number" id="classid" name="classid" class="form-control form-control-lg"  placeholder="ex:201,204" required /> -->
+                   <input type="number" id="classid" name="classid" class="form-control form-control-lg"  placeholder="ex:201,204" pattern="\b(2[0-4][0-9]|25[0-5])" 
+                   title="should start with 2.. and 3 digit only" required /> -->
                   <label class="form-label" for="dob">ClassID</label>
                 </div> 
                   </div>

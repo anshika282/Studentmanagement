@@ -35,6 +35,7 @@ if($subcount==0){
               
                  }else{
                     $showError="Teacher or teacher id does not exists";
+                   
                   }
         
      }   
@@ -234,13 +235,15 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
                   <form class="" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                      <input type="text" id="sname" name="sname" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Example1m">Subject Name</label>
+                      <input type="text" id="sname" name="sname" class="form-control form-control-lg"  pattern="^([a-zA-Z' ']+)$"
+                       title="only character and spaces allowed" required/>
+                      <label class="form-label" for="sname">Subject Name</label>
                     </div>
                   </div>
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                      <input type="text" id="form3Example1n"  name="classID" class="form-control form-control-lg" />
+                      <input type="text" id="form3Example1n"  name="classID" class="form-control form-control-lg" placeholder="ex:201,204" pattern="\b(2[0-4][0-9]|25[0-5])" 
+                   title="should start with 2.. and 3 digit only"  required/>
                       <label class="form-label" for="form3Example1n">ClassID</label>
                     </div>
                   </div>
@@ -249,14 +252,15 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
                 <div class="row">
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                      <input type="number" id="mob" name="sid"  class="form-control form-control-lg" placeholder="ex:301,304" required/>
-                      <label class="form-label" for="form3Example1m1">Subject Id</label>
+                      <input type="text" id="sid" name="sid"  class="form-control form-control-lg" placeholder="ex:301,304" pattern="\b(3[0-4][0-9]|25[0-5])"  title="should start with 3.. and 3 digit only" required/>
+                      <label class="form-label" for="sid">Subject Id</label>
                     </div>
                   </div>
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                      <input type="text" id="tname" name="tname" class="form-control form-control-lg" required />
-                      <label class="form-label" for="form3Example1n1">teacher name</label>
+                      <input type="text" id="tname" name="tname" class="form-control form-control-lg" pattern="^([a-zA-Z' ']+)$"
+                       title="only character and spaces allowed" required/>
+                      <label class="form-label" for="tname">teacher name</label>
                     </div>
                   </div>
                 </div>
@@ -267,8 +271,8 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
                 </div> -->
 
                 <div class="form-outline mb-4">
-                  <input type="number" id="dob" name="tid" class="form-control form-control-lg"  placeholder="ex:101,104" required />
-                  <label class="form-label" for="dob">Teacher id</label>
+                  <input type="text" id="tid" name="tid" class="form-control form-control-lg"  placeholder="ex:101,104"  pattern="\b(1[0-4][0-9]|25[0-5])"  title="should start with 1.. and 3 digit only"  required />
+                  <label class="form-label" for="tid">Teacher id</label>
                 </div>
                   </div>
             
