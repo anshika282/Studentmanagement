@@ -11,15 +11,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
        if($section=="a"){
          header('location:timetable_10a.html');    
        } else{
-        header('location:timetable_10b.html');
+        header('location:timetable_10B.html');
     } 
 }
 
     if($class=="3"){
         if($section=="a"){
-          header('location:timetable_11A.html');   
+          header('location:timetable_12A.html');   
         }else{
-         header('location:timetable_11B.html');
+         header('location:timetable_12B.html');
      } 
     
     }

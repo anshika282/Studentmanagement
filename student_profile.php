@@ -117,6 +117,8 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
 $profile=$_SESSION['username'];
 $sql="SELECT * FROM student where sname='$profile'";
 $result=mysqli_query($con,$sql);
+
+
 ?>
 <?php
 while($rows=mysqli_fetch_array($result)){
@@ -207,6 +209,7 @@ while($rows=mysqli_fetch_array($result)){
 </section>
 <?php 
 // close while loop 
+ 
 }
 ?>
 </main>

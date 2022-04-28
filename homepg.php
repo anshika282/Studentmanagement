@@ -114,12 +114,12 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
 
   <main class="col px-0 flex-grow-1">
      <?php 
-echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-<strong>Success!</strong> You have logged in successfully!     
-<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-  <span aria-hidden="true">&times;</span>
-</button>
-</div>';
+// echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+// <strong>Success!</strong> You have logged in successfully!     
+// <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+//   <span aria-hidden="true">&times;</span>
+// </button>
+// </div>';
 ?>
   <div class="container py-3">
  

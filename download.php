@@ -22,7 +22,7 @@ if (!$id) {
 
 	<link rel="stylesheet" type="text/css" href="ebook.css">
 
-	<title>File Upload</title>
+	<title>student | download</title>
 </head>
 <style>
   body {

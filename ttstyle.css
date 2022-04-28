@@ -1,6 +1,9 @@
 body {
   background-image: url(checkerboard-cross.png);
-  color: crimson;
+  color: black;
+}
+tr,td{
+  color  :black;
 }
 .head{
   text-align: center;

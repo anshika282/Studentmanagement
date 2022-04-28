@@ -2,8 +2,11 @@
  session_start();
 
  session_destroy();
-
-header('location:index.php');
+ echo ("<script LANGUAGE='JavaScript'>
+             window.alert('succesfully logout!!!');
+             window.location.href='index.php';
+             </script>");
+// header('location:index.php');
 ?>
 
 

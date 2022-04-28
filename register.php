@@ -47,8 +47,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                      $stuentry = "INSERT INTO `student` (`uid`, `sname`, `email`, `sclass` , `password` , `clid` , `section` , `mno` , `gender` , `dob`) VALUES ('$uid','$name', '$email','$class','$hash','$classid','$sec','$mob','$gender','$dob')";
                      $result = mysqli_query($con, $stuentry);
                      if ($result) {
-						 $showAlert = true;
-						 header("Location:index.php");
+						//  $showAlert = true;
+             echo ("<script LANGUAGE='JavaScript'>
+             window.alert('Acc ount created succesfully..now login!');
+             window.location.href='index.php';
+             </script>");
+						//  header("Location:index.php");
 						 	  
                      }else{
                       $showError = "Error in SQl ";
@@ -221,20 +225,17 @@ if($exists) {
                 <div class="row">
                   <div class="col-md-6 mb-4">
 
-                    <select class="select"  name="sclass" required>
-                      <option value="1">Standard  </option>
-                      <option value="10">10</option>
-                      <option value="12">12</option>
-                    </select>
-
+                  <div class="form-outline">
+                      <input type="number" name="sclass" id="sclass" class="form-control form-control-lg" required/>
+                      <label class="form-label" for="sclass">class/std</label>
+                    </div>
                   </div>
                   <div class="col-md-6 mb-4">
 
-                    <select class="select" name="sec" required>
-                      <option value="1">Section</option>
-                      <option value="A">A</option>
-                      <option value="B">B</option>
-                    </select>
+                  <div class="form-outline">
+                      <input type="text" name="sec" id="sec" class="form-control form-control-lg" pattern="^[a-zA-Z]$" title="only one alphabet required"  required/>
+                      <label class="form-label" for="sec">section</label>
+                    </div>
 
                   </div>
                 </div>
@@ -265,8 +266,8 @@ if($exists) {
                 
 
                 <div class="d-flex justify-content-end pt-3">
-                  <button type="reset" class="btn btn-light btn-lg">Reset all</button>
-                  <button type="submit" class="btn btn-warning btn-lg ms-2">Submit form</button>
+                  <button type="reset" class="btn btn-warning btn-lg">Reset all</button>
+                  <button type="submit" class="btn btn-success btn-lg ms-2">Submit form</button>
                 </div>
 
               </div>

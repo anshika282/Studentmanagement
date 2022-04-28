@@ -358,41 +358,22 @@ if($exists) {
                 </div>
                 <div class="row">
                  <div class="col-md-6 mb-4">
-
-                    <select class="select" name="sclass" required>
+                 <input type="text" id="sclass" name="sclass" class="form-control form-control-lg"  required/>
+                  <label class="form-label" for="sclass">Class/std</label>
+                    <!-- <select class="select" name="sclass" required>
                       <option value="1">Standard</option>
                       <option value="10">10</option>
                       <option value="12">12</option>
-                      <!-- <option value="4">Option 3</option> -->
-                    </select>
+                      f
+                      <!-<option value="4">Option 3</option> 
+                    </select> -->
 
                   </div>
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
-<h6 class="mb-0 me-4"> Section: </h6>
+                  <input type="text" id="sec" name="sec" class="form-control form-control-lg"  required/>
+                  <label class="form-label" for="sec">section</label>
 
-<div class="form-check form-check-inline mb-0 me-4">
-  <input
-    class="form-check-input"
-    type="radio"
-    name="sec"
-    id="seca"
-    value="a"
-    required
-  />
-  <label class="form-check-label" for="seca">A</label>
-</div>
-
-<div class="form-check form-check-inline mb-0 me-4">
-  <input
-    class="form-check-input"
-    type="radio"
-    name="sec"
-    id="secb"
-    value="b"
-  />
-  <label class="form-check-label" for="secb">B</label>
-</div>
 </div>
 </div>
 

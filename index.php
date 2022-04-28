@@ -26,11 +26,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       
        $namepass=mysqli_fetch_assoc($query);  
        if (password_verify($password, $namepass['password'])){ 
-               $db_pass=$namepass['spwd'];
+            //    $db_pass=$namepass['spwd'];
        $_SESSION['username'] = $namepass['sname'];
        $_SESSION['email']=$namepass['email'];
-        	echo "login succesful";
-       	header('location:homepg.php'); 
+	   echo ("<script LANGUAGE='JavaScript'>
+	   window.alert(' Proceeding to OTP Login !!');
+	   window.location.href='regotp.php';
+	   </script>"); 
           }else{
                
              echo '<script type ="text/JavaScript">';  
@@ -51,6 +53,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
  <!DOCTYPE html>
 <html lang="en" >
 <head>
+	<title>Login</title>
 <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" type="text/css" href="style1.css"/>
@@ -81,9 +84,9 @@ a{
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
 			<h1>Student Sign in </h1>
 			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-			    <a href="#" class="social" ><i class="fab fa-google"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+				<a href="https://www.facebook.com/" class="social"><i class="fab fa-facebook-f"></i></a>
+			    <a href="https://www.linkedin.com/login" class="social" ><i class="fab fa-google"></i></a>
+				<a href="https://www.linkedin.com/login" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>	
 			<span class="center">or</span>
 			
@@ -105,9 +108,9 @@ a{
 		<form action="teacherlogin.php" method="POST">
 			<h1>Teacher Sign in</h1>
 			<div class="social-container">
-				<a href="#" class="social" ><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab  fa-google"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+				<a href="https://www.facebook.com/"  class="social" ><i class="fab fa-facebook-f"></i></a>
+				<a href="https://www.linkedin.com/login" class="social"><i class="fab  fa-google"></i></a>
+				<a href="https://www.linkedin.com/login" class="social"><i class="fab fa-linkedin-in"></i></a>
 			</div>
 			<span  class="center">or</span>
 			<input type="text" placeholder="Name" name="tname" id="tname" pattern="^([a-zA-Z' ']+)$"

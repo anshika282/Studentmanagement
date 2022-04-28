@@ -1,7 +1,8 @@
 <?php
   
   // The plain text password to be hashed
-  $plaintext_password = "Asghn12312";
+  // $plaintext_password = "Asghn12";
+  $plaintext_password = "Anshika13";
   
   // The hash of the password that
   // can be stored in the database
@@ -10,4 +11,4 @@
   
   // Print the generated hash
   echo "Generated hash: ".$hash;
-?>
+?>d

@@ -15,7 +15,7 @@ if(!isset($_SESSION['name']))
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student home</title>
+    <title>Teacher | attendance</title>
     <!-- bootstrap 5 css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
@@ -140,7 +140,7 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
   <main class="col px-0 flex-grow-1">
    <div class="panel panel-default px-2 ">
       <div class="panel-heading px-4 ">
-        <h1 style="text-align: center; margin-top:20px;">Attendance Manage</h1>                
+        <h1 style="text-align: center; margin-top:20px;"><strong>Attendance Module</strong></h1>                
       </div>
       <div class="panel-body table-responsive py-4 ">
           <a href="attendance_view.php" class="btn btn-primary">View</a>
@@ -176,7 +176,7 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
                      Absent<input type="radio" name="attendance[<?php echo $show['uid']; ?>]" value="Absent"  >
                   </td>
                     </tr>
-               <?php }   ?>
+               <?php }   ?>  
               </tbody>
                     
 
@@ -184,7 +184,8 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
                          if($_SERVER['REQUEST_METHOD']=='POST'){
                            $att=$_POST['attendance'];
                            $date=date('d-m-y');
-                           $query="select distinct date from attendance";
+                           $studentid= $show['uid']; 
+                           $query="select distinct date from attendance' ";
                            $result= mysqli_query($con,$query);
                            $b=false;
                             // echo "$result";
@@ -200,7 +201,7 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
                                       } 
                               }  
                            }
-                          
+                        
                            if(!$b){
                              foreach($att as $key => $value){
                                if($value=="Present"){
@@ -223,6 +224,7 @@ background: linear-gradient(90deg, rgba(223,118,138,1) 0%, rgba(235,157,73,0.706
                                        
                          }
                     ?>
+                    
           </table>
           <input class="btn btn-primary" type="submit" value="Take attendance"></input>
         </form>
